@@ -14,7 +14,7 @@ public interface GenericDAO<T, ID> {
 
     boolean remove(ID id);
 
-    void update(T entity);
+    boolean update(T entity);
 
     T getById(ID id);
 

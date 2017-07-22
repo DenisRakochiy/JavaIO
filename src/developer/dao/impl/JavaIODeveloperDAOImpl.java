@@ -60,7 +60,7 @@ public class JavaIODeveloperDAOImpl implements DeveloperDAO {
     }
 
     @Override
-    public void update(Developer developer) {
+    public boolean update(Developer developer) {
 
         if (developer.getId() == null) {
             System.out.println("Developer not found...");
@@ -68,6 +68,7 @@ public class JavaIODeveloperDAOImpl implements DeveloperDAO {
             remove(developer.getId());
             save(developer);
         }
+        return false;
     }
 
     @Override
@@ -86,7 +87,7 @@ public class JavaIODeveloperDAOImpl implements DeveloperDAO {
                 }
 
                 String[] arrayOfSplitDeveloper = buffer.split(",");
-                if ((Integer.parseInt(arrayOfSplitDeveloper[0])) == id) {
+                if ((Long.parseLong(arrayOfSplitDeveloper[0])) == id) {
                     developer.setId(Long.parseLong(arrayOfSplitDeveloper[0]));
                     developer.setFirstName(arrayOfSplitDeveloper[1]);
                     developer.setLastName(arrayOfSplitDeveloper[2]);
@@ -99,7 +100,6 @@ public class JavaIODeveloperDAOImpl implements DeveloperDAO {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return developer;
     }
 

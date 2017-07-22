@@ -63,12 +63,12 @@ public class Developer {
 
     @Override
     public String toString() {
-        return "Developer{" +
+        return "Developer {" +
                 "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", specialty='" + specialty + '\'' +
-                ", salary=" + salary +
-                '}';
+                ", firstName = '" + firstName + '\'' +
+                ", lastName = '" + lastName + '\'' +
+                ", specialty = '" + specialty + '\'' +
+                ", salary = " + salary +
+                "$}";
     }
 }
